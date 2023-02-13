@@ -1,0 +1,7 @@
+get :   http://localhost:8085/getstudent
+
+post :  http://localhost:8085/studentRegister
+
+put :   http://localhost:8085/Updatestudent
+
+delete :  http://localhost:8085/deletestudent/2?rollnumber=4      query   : rollnumber === 12

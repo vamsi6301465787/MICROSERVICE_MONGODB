@@ -1,0 +1,147 @@
+openapi: '3.0.0'
+info:
+  title: STUDENT REGISTRATION FORM
+  version: '1.0'
+servers:
+  - url: http://localhost:8080
+
+
+paths:
+  /studentRegister:
+    post:
+      tags:
+        - student
+      description: studentcreated
+      operationId: studentcreated
+      responses:
+        '201':
+          description: studentCreate Sucessfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: studentCreateFailure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      requestBody:
+        description: studentCreate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BODYDATA'
+  /getstudent:
+    get:
+      tags:
+        - student
+      description:  Getstudent
+      operationId: Getstudent
+      responses:
+        '201':
+          description: Getstudent Sucessfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BODYDATA'
+        '400':
+          description: Getstudent UserCreateFailure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /Updatestudent/{rollnumber}:
+    put:
+      tags:
+        - student
+      description:  Updatestudent
+      operationId: Updatestudent
+      parameters:
+        - name: rollnumber
+          in: path
+          description: studentid
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: UpdatestudentSucess
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: UpdatestudentFailure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+      requestBody:
+        description: Updatestudent
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BODYDATA'
+  /deletestudent/{rollnumber}:
+    delete:
+      tags:
+        - student
+      description:  deletestudent
+      operationId: DELETEstudent
+      parameters:
+        - name: rollnumber
+          in: query
+          description: topicid
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description:  DeletestudentSucessFully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        '400':
+          description: DeletestudentFailure
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            
+
+components:
+  schemas:
+    ApiResponse:
+      type: object
+      description:  ResponseInStatusCode
+      properties:
+        code: 
+          type: integer
+          format: int32
+        type:
+          type: string
+        message:
+          type: string    
+          
+    BODYDATA:
+      type: object
+      properties:
+        rollnumber:
+          type: string
+        fullname: 
+          type: string
+        dob: 
+          type: string
+        phonenumber:
+          type: string
+        branch:
+          type: string
+        email:
+          type: string
+      required:
+      - rollnumber
+      - email
