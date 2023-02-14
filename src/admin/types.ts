@@ -5,7 +5,7 @@ export const collections:{users?: mongoDB.Collection}={}
 
 export async function connectToDatabase() {
     const client:mongoDB.MongoClient=new mongoDB.MongoClient(
-        "mongodb+srv://vamsi:vamsi4()(L@cluster0.s0tyjqp.mongodb.net/?retryWrites=true&w=majority"
+        "mongodb+srv://vamsi:<password>@cluster0.s0tyjqp.mongodb.net/?retryWrites=true&w=majority"
    
     )
 
