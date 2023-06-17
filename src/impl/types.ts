@@ -1,5 +1,5 @@
 import { studentApiImpl } from "./user/types";
-import { ApiImplementation } from "../../dict/types";
+import { ApiImplementation } from "../../dist/types";
 
 
 

@@ -1,6 +1,6 @@
 
-import { DeletestudentResponse,GetGetStudentResponse, GetGetAllStudentsResponse,UpdatestudentResponse, StudentApi, StudentcreatedResponse } from "../../../dict/api/student/types";
-import { Api } from "../../../dict/models";
+import { DeletestudentResponse,GetGetStudentResponse, GetGetAllStudentsResponse,UpdatestudentResponse, StudentApi, StudentcreatedResponse } from "../../../dist/api/student/types";
+import { Api } from "../../../dist/models";
 import responses from "../user/respones/#responses.json" 
 import {collections} from '../../../src/admin/types'
 import { v4 } from "uuid"

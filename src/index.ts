@@ -12,7 +12,7 @@ import swaggerUi from "swagger-ui-express"
 
 const swaggerDocuments= YAML.load("openapi.yml")
 
-import serviceApi from '../dict/index'
+import serviceApi from '../dist/index'
 
 import bodyParser from "body-parser"
 
@@ -43,8 +43,8 @@ app.use(
 connectToDatabase()
 .then(()=>{
     serviceApi(app,impl);
-    app.listen(8081,()=>{
-        console.log(`Server Started at http://localhost:8081`)
+    app.listen(8087,()=>{
+        console.log(`Server Started at http://localhost:8087`)
     })
 
 }).catch((error: Error)=>{
