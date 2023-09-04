@@ -2,7 +2,7 @@
     "auth1":[
         {
             "status": 400,
-            "body": {"message": "hiiiiiiii something went wrong"}
+            "body": {"message": "something went wrong"}
         }
     ],
     "auth2":[
